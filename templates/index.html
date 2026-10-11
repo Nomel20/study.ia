@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyAI 📚</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="bulles" id="bulles"></div>
+
+  <header class="hero">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo StudyAI" class="logo-img">
+    <h1 class="logo">StudyAI</h1>
+    <p class="phrase">Transforme ton cours en <span id="mot" class="mot"></span><span class="curseur">|</span></p>
+  </header>
+
+  <main>
+    <section class="depot reveal" id="depot">
+      <input type="file" id="fichier" accept="application/pdf" hidden>
+      <div class="depot-icone">📄</div>
+      <h2>Glisse ton cours PDF ici</h2>
+      <p id="depot-texte">ou clique pour choisir un fichier</p>
+    </section>
+
+    <div class="zone-bouton reveal">
+      <button id="btn-generer" class="bouton" disabled>✨ Générer mes outils</button>
+    </div>
+
+    <section class="resultat" id="resultat" hidden>
+      <div class="onglets" id="onglets">
+        <button class="onglet actif" data-type="resume">📝 Résumé</button>
+        <button class="onglet" data-type="fiches">🗂️ Fiches</button>
+        <button class="onglet" data-type="qcm">✅ QCM</button>
+        <button class="onglet" data-type="flashcards">🃏 Flashcards</button>
+        <button class="onglet" data-type="examen">🎓 Examen</button>
+        <button class="onglet" data-type="plan">📅 Plan</button>
+      </div>
+      <div class="resultat-contenu" id="resultat-contenu"></div>
+    </section>
+
+    <section class="cartes">
+      <article class="carte reveal"><span>📝</span><h3>Résumé</h3><p>L'essentiel du cours en quelques lignes.</p></article>
+      <article class="carte reveal"><span>🗂️</span><h3>Fiches de révision</h3><p>Une fiche claire par notion clé.</p></article>
+      <article class="carte reveal"><span>✅</span><h3>QCM</h3><p>Teste-toi avec des questions corrigées.</p></article>
+      <article class="carte reveal"><span>🃏</span><h3>Flashcards</h3><p>Mémorise question après question.</p></article>
+      <article class="carte reveal"><span>🎓</span><h3>Questions d'examen</h3><p>Entraîne-toi comme le jour J.</p></article>
+      <article class="carte reveal"><span>📅</span><h3>Plan de révision</h3><p>Un programme jour par jour.</p></article>
+    </section>
+  </main>
+
+  <footer>Fait avec 💜 pour réussir tes examens</footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
